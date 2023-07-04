@@ -20,9 +20,9 @@ const FooterComponent = () => {
               <p>
                ZION
               </p>
-              <p>
-                <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" className="btn btn--footer">Get Direction</a>
-              </p>
+              {/*<p>*/}
+              {/*  <a href="https://goo.gl/maps/bc7C7eYtSmnNs6216" target="_blank" className="btn btn--footer">Get Direction</a>*/}
+              {/*</p>*/}
             </div>
             <div className="column large-5 medium-full">
               <h4 className="h6">Quick Links</h4>

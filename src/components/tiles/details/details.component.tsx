@@ -1,4 +1,4 @@
-import {fetchData, fetchSingleData} from "../../../utils/axios/fetch-data";
+import {fetchSingleData} from "../../../utils/axios/fetch-data";
 import React, { useState, useEffect } from 'react';
 import {useParams} from "react-router-dom";
 
@@ -18,7 +18,7 @@ const DetailsComponent = () => {
       setData(teaching);
       console.log(teaching);
     })
-  }, []);
+  }, [id]);
 
   return (
     <div>

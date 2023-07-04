@@ -1,14 +1,6 @@
 import {fetchData} from "../../utils/axios/fetch-data";
 import React, { useState, useEffect } from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import blogTileImage from "./assets/volunteer-header-bg-2000.jpg"
 import {ContentCardComponent} from "../content-card";
-import {useNavigate} from "react-router-dom";
 
 interface IArticle {
   id: string;
@@ -30,7 +22,7 @@ const TilesComponent = (props: TilesProps) => {
       setData(fetchedData);
       console.log(fetchedData);
     })
-  }, []);
+  }, [props.dataLink]);
 
 const mappedData = data?.map((datum, pos) => {
   console.log("Position", pos, datum);
