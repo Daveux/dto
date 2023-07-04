@@ -5,7 +5,6 @@ const LayoutComponent = () => {
   return(
     <>
       <MainComponent/>
-      <FooterComponent/>
     </>
   );
 }

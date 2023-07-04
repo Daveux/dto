@@ -17,23 +17,28 @@ interface IArticle {
     body: string;
   }
 }
-const TeachingComponent = () => {
+
+interface TilesProps {
+  pageName: string;
+  dataLink: string;
+}
+const TilesComponent = (props: TilesProps) => {
   const [data, setData] = useState<IArticle[]>()
   useEffect(() => {
-    fetchData().then(response => {
-      const teachings = response.data.data;
-      setData(teachings);
-      console.log(teachings);
+    fetchData(props.dataLink).then(response => {
+      const fetchedData = response?.data?.data;
+      setData(fetchedData);
+      console.log(fetchedData);
     })
   }, []);
 
-const teachings = data?.map((teaching, pos) => {
-  console.log("Position", pos, teaching);
+const mappedData = data?.map((datum, pos) => {
+  console.log("Position", pos, datum);
   return (
     <ContentCardComponent
-      item={teaching.attributes}
-      key={teaching.id.toString()}
-      navigateTo={`/teaching/${teaching.id}`}
+      item={datum.attributes}
+      key={datum.id.toString()}
+      navigateTo={`/teaching/${datum.id}`}
     />
   )
 })
@@ -45,7 +50,7 @@ const teachings = data?.map((teaching, pos) => {
         <div className="gradient-overlay" />
         <div className="row page-header__content">
           <div className="column">
-            <h1>Upcoming Events</h1>
+            <h1>{props.pageName}</h1>
           </div>
         </div>
       </section> {/* end page-header */}
@@ -53,7 +58,7 @@ const teachings = data?.map((teaching, pos) => {
     ================================================== */}
       <section className="page-content">
         <div className="row wide block-large-1-2 block-900-full events-list">
-          {teachings}
+          {mappedData || <h1>No data</h1>}
         </div> {/* end events-list */}
         <div className="row">
           <div className="column large-full">
@@ -111,4 +116,4 @@ const teachings = data?.map((teaching, pos) => {
   );
 }
 
-export  default TeachingComponent;
+export  default TilesComponent;

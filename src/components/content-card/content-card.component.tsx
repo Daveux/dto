@@ -6,7 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import blogTileImage from "../teaching/assets/volunteer-header-bg-2000.jpg"
+import blogTileImage from "../tiles/assets/volunteer-header-bg-2000.jpg"
 import {reduceWords} from "../../utils/helpers/reduce-words";
 import {useNavigate} from "react-router-dom";
 const ContentCardComponent = (props:any) => {
